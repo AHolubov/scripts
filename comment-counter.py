@@ -7,15 +7,18 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("path", 
-                    help='absolute path to the root project directory')
+                    help='absolute path to the root project directory'
+                    )
 parser.add_argument('--exclude',
                     action='append', 
                     default=[],
-                    help='directories to be excluded from search')
+                    help='directories to be excluded from search'
+                    )
 parser.add_argument('-v', 
                     '--verbose',
                     action='store_true', 
-                    help='verbose mode')
+                    help='verbose mode'
+                    )
 args = parser.parse_args()
 
 
