@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("path", 
-                    help='absolute path to the root project directory'
+                    help='path to the root project directory'
                     )
 parser.add_argument('--exclude',
                     action='append', 
