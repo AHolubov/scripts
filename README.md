@@ -11,7 +11,7 @@ Usage:
 comment-counter.py [-h] [--exclude EXCLUDE] [-v] path
 
 positional arguments:
-  path               absolute path to the root project directory
+  path               path to the root project directory
 
 optional arguments:
   -h, --help         show this help message and exit
