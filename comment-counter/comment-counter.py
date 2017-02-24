@@ -62,18 +62,21 @@ with open(report_name, 'w') as csvfile:
                     
                     if multiline_comment:
                         count_comment += 1
-                    elif not clean_row:
-                        count_blank += 1
-                    elif clean_row.startswith('//'):
-                        count_comment += 1
-                    elif clean_row.startswith('/*') and '*/' not in clean_row:
-                        count_comment += 1
-                        multiline_comment = True
-                    elif clean_row.endswith('*/'):
-                        count_comment += 1
-                        multiline_comment = False
+                        if '*/' in clean_row:
+                            multiline_comment = False
                     else:
-                        count_code += 1
+                        elif not clean_row:
+                            count_blank += 1
+                        elif clean_row.startswith('//'):
+                            count_comment += 1
+                        elif clean_row.startswith('/*') and '*/' not in clean_row:
+                            count_comment += 1
+                            multiline_comment = True
+                        elif clean_row.endswith('*/'):
+                            count_comment += 1
+                            multiline_comment = False
+                        else:
+                            count_code += 1
                 
                 try:
                 
