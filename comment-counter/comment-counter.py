@@ -82,8 +82,8 @@ with open(report_name, 'w') as csvfile:
                                         count_comment, 
                                         count_code, 
                                         count_blank, 
-                                        100 * (count_comment/count_row), 
-                                        100 * (count_code/count_row)
+                                        100 * (float(count_comment) / count_row), 
+                                        100 * (float(count_code) / count_row)
                                         ])
                 
                 except(ZeroDivisionError):
@@ -107,8 +107,8 @@ with open(report_name, 'w') as csvfile:
                         total_comment,
                         total_code,
                         total_blank,
-                        100 * (total_comment/total_row), 
-                        100 * (total_code/total_row)
+                        100 * (float(total_comment) / total_row), 
+                        100 * (float(total_code) / total_row)
                         ])
 
 if args.verbose:
