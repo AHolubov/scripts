@@ -65,7 +65,7 @@ with open(report_name, 'w') as csvfile:
                         if '*/' in clean_row:
                             multiline_comment = False
                     else:
-                        elif not clean_row:
+                        if not clean_row:
                             count_blank += 1
                         elif clean_row.startswith('//'):
                             count_comment += 1
@@ -118,4 +118,3 @@ if args.verbose:
     print('Report saved as ' + report_name)
 
 print("Complete!")
-
